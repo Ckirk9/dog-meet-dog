@@ -1,22 +1,21 @@
 import React, {useState, useEffect} from "react"
 import TinderCard from "react-tinder-card"
-import db from "../firebase"
+import database from "../firebase"
 import "../PetCards.css"
 
 const PetCards= () => {
     const [pets, setPets] = useState([]);
 
     useEffect(() => {
-        db
-            .collection("pets")
-            .onSnapShot((snapshot) =>
-              setPets(snapshot.docs.map((doc) => doc.data()))
-            )
+        // runs through the pets collection in the DB and anytime a new pet is added compent will re-render
+        //when does useEffect get triggered?
+        database.collection("pets").onSnapshot((snapshot) =>
+              setPets(snapshot.docs.map((doc) => doc.data())
+            ))
     }, [])
 
     return(
         <div className="pet-card">
-            <h1>Pet Cards</h1>
             {pets.map(pet => (
                 // courtesy of react-tinder-card already includes swipe functionality
                 <TinderCard
