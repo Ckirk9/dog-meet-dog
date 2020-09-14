@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react"
 import TinderCard from "react-tinder-card"
-//import database from "./firebase"
+import db from "../firebase"
 import "../PetCards.css"
 
 const PetCards= () => {
     const [pets, setPets] = useState([]);
 
     useEffect(() => {
-        database
+        db
             .collection("pets")
             .onSnapShot((snapshot) =>
               setPets(snapshot.docs.map((doc) => doc.data()))
