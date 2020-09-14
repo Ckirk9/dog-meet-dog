@@ -3,15 +3,20 @@ import "../Header.css"
 import PetsIcon from '@material-ui/icons/Pets';
 import ChatIcon from '@material-ui/icons/Chat';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
+import IconButton from "@material-ui/core/IconButton";
 
 function Header() {
     return (
         <div className="header">
-            <PetsIcon fontSize="large"/>
+            <IconButton>
+            <PetsIcon className="icon" fontSize="large"/>
+            </IconButton>
             <div className="logo">
-            <LoyaltyIcon fontSize="large" />
+            <LoyaltyIcon className="icon" fontSize="large" />
             </div>
-            <ChatIcon fontSize="large"/>
+            <IconButton>
+            <ChatIcon className="icon" fontSize="large"/>
+            </IconButton>
         </div>
     )
 }

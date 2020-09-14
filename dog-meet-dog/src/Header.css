@@ -1,6 +1,7 @@
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid salmon;
 }
 
@@ -9,4 +10,8 @@
     width: 40px; */
     object-fit: contain;
     color: salmon;
+}
+
+.icon {
+    padding: 20px;
 }
