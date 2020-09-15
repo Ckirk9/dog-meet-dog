@@ -8,20 +8,20 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Header/>
       <Router>
       <Switch>
-      <Route path="/chat">
+      <Route path="/message">
+          <Header backButton="/" />
           <h1>chat page</h1>
+
         </Route>
         <Route exact path="/">
-        <PetCards />
-        <SwipeButtons />
+          <Header/>
+          <PetCards />
+          <SwipeButtons />
         </Route>
         </Switch>
       </Router>
-      {/* pet profile cards  */}
-      {/* buttons below profile cards  */}
 
       {/* messaging screen */}
       {/* individual messaging screen */}

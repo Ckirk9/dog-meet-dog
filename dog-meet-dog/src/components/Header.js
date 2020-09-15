@@ -1,22 +1,32 @@
 import React from 'react'
 import "../Header.css"
+import { Link } from "react-router-dom"
 import PetsIcon from '@material-ui/icons/Pets';
 import ChatIcon from '@material-ui/icons/Chat';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import IconButton from "@material-ui/core/IconButton";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-function Header() {
+function Header({ backButton }) {
     return (
         <div className="header">
+            {backButton ? (
+                <ArrowBackIcon fontSize="large" className="icon" fontSize="large" />
+            ) : (
             <IconButton>
             <PetsIcon className="icon" fontSize="large"/>
             </IconButton>
+            )}
+            <Link to="/">
             <div className="logo">
             <LoyaltyIcon className="icon" fontSize="large" />
             </div>
+            </Link>
+            <Link to="message">
             <IconButton>
             <ChatIcon className="icon" fontSize="large"/>
             </IconButton>
+            </Link>
         </div>
     )
 }
