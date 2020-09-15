@@ -1,0 +1,21 @@
+.swipe-right {
+    padding: 3vw;
+    color: salmon;
+}
+.swipe-buttons {
+    position: fixed;
+    bottom: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+    box-shadow: 0px 18px 53px 0px rgba(0, 0, 0, 0.3);
+    /* border: 1px solid salmon; */
+}
+
+.swipe-left {
+    padding: 3vw;
+    color: grey;
+}
+
+
