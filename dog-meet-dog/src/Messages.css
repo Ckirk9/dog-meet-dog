@@ -1,0 +1,26 @@
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    height: 70px;
+    border-bottom: 1px solid salmon;
+}
+
+.message-image {
+    margin-right: 20px;
+}
+
+.message-details {
+    /* prioritizes this container over the image icon and timestamp */
+    flex: 1;
+    color: darkgray;
+}
+
+.message-details > p {
+    color: mediumaquamarine;
+}
+
+.timestamp {
+    color: whitesmoke;
+}

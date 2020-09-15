@@ -1,7 +1,3 @@
-.swipe-right {
-    padding: 3vw;
-    color: salmon;
-}
 .swipe-buttons {
     position: fixed;
     bottom: 10vh;
@@ -13,9 +9,14 @@
     /* border: 1px solid salmon; */
 }
 
+.swipe-right {
+    padding: 3vw;
+    color: mediumaquamarine;
+}
+
 .swipe-left {
     padding: 3vw;
-    color: grey;
+    color: salmon;
 }
 
 
