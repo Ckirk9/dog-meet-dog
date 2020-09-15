@@ -1,10 +1,10 @@
 import React from "react"
 import CancelIcon from '@material-ui/icons/Cancel';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import "./SwipeButtons.css"
+import "./LikeButtons.css"
 import { IconButton } from "@material-ui/core";
 
-function SwipeButtons() {
+function LikeButtons() {
     return (
         <div className="swipe-buttons">
             <IconButton className="swipe-left">
@@ -17,4 +17,4 @@ function SwipeButtons() {
     )
 }
 
-export default SwipeButtons
+export default LikeButtons

@@ -2,7 +2,8 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import Header from './components/Header'
 import PetCards from './components/PetCards'
-import SwipeButtons from './SwipeButtons'
+import LikeButtons from './LikeButtons'
+import Messages from './components/Messages'
 import './App.css';
 
 function App() {
@@ -12,13 +13,13 @@ function App() {
       <Switch>
       <Route path="/message">
           <Header backButton="/" />
-          <h1>chat page</h1>
+          <Messages />
 
         </Route>
         <Route exact path="/">
           <Header/>
           <PetCards />
-          <SwipeButtons />
+          <LikeButtons />
         </Route>
         </Switch>
       </Router>
