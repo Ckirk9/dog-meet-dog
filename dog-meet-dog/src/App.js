@@ -1,6 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import Header from "./components/Header"
+import PetProfile from "./components/PetProfile"
 import PetCards from "./components/PetCards"
 import LikeButtons from "./LikeButtons"
 import Messages from "./components/Messages"
@@ -19,6 +20,10 @@ function App() {
           <Route path="/message">
               <Header backButton="/" />
               <Messages />
+          </Route>
+          <Route path="/profile">
+              <Header />
+              <PetProfile />
           </Route>
           <Route exact path="/">
               <Header/>
