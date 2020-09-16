@@ -16,9 +16,11 @@ const Header = ({ backButton }) => {
                 <ArrowBackIcon className="icon" fontSize="large" />
                 </IconButton>
             ) : (
+                <Link to="/profile">
                 <IconButton>
                 <PetsIcon className="icon" fontSize="large"/>
                 </IconButton>
+                </Link>
             )}
             <Link to="/">
                 <div className="logo">

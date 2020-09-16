@@ -27,7 +27,11 @@ function App() {
           </Route>
         </Switch>
       </Router>
-
+      {/* register */}
+      {/* log in */}
+      {/* homepage */}
+      {/* matches */}
+      {/* profile */}
     </div>
   );
 }
