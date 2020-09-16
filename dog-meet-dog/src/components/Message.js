@@ -1,9 +1,11 @@
 import React from "react"
-import "../Messages.css"
+import "../Message.css"
 import Avatar from "@material-ui/core/Avatar"
+import { Link } from "react-router-dom"
 
-function Message({ name, message, timestamp, picture }) {
+const Message = ({ name, message, timestamp, picture }) => {
     return(
+        <Link to={`/message/${ name }`}>
         <div className="message">
             <Avatar className="message-image" alt={name} src={picture} />
             <div className="message-details">
@@ -12,6 +14,7 @@ function Message({ name, message, timestamp, picture }) {
             </div>
             <p className="timestamp">{ timestamp }</p>
         </div>
+        </Link>
     )
 }
 

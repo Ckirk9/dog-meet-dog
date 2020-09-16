@@ -5,7 +5,10 @@
     padding: 20px;
     height: 70px;
 }
-
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .message-image {
     margin-right: 20px;
 }
