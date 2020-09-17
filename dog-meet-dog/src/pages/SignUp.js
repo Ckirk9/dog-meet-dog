@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PetModel from '../models/pet'
+import "../SignUp.css"
 
 class SignUp extends Component {
     state = {
@@ -38,12 +39,12 @@ class SignUp extends Component {
 
     render() {
         return (
-            <div className="form-group">
+            <div className="signup">
                 <h3>Sign Up</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <label className="form-group" htmlFor="username">Username</label>
-                        <input className="form-group"
+                    <div className="signup">
+                        <label className="signup" htmlFor="username">Username</label>
+                        <input className="input-field"
                         onChange={this.handleChange}
                         type="text"
                         id="username"
@@ -51,27 +52,27 @@ class SignUp extends Component {
                         value={this.state.username}
                         />
                     </div>
-                    <div className="form-group">
-                    <label className="form-group" htmlFor="password">Password</label>
-                    <input className="form-group"
+                    <div className="signup">
+                    <label className="signup" htmlFor="password">Password</label>
+                    <input className="input-field"
                         onChange={this.handleChange}
                         type="password"
                         id="password"
                         name="password"
                         value={this.state.password} />
                 </div>
-                <div className="form-group">
-                    <label className="form-group" htmlFor="password2">Confirm Password</label>
-                    <input className="form-group"
+                <div className="signup">
+                    <label className="signup" htmlFor="password2">Confirm Password</label>
+                    <input className="input-field"
                         onChange={this.handleChange}
                         type="password"
                         id="password2"
                         name="password2"
                         value={this.state.password2} />
                 </div>
-                <div className="form-group">
-                        <label className="form-group" htmlFor="text-area">About Me</label>
-                        <input className="form-group"
+                <div className="signup">
+                        <label className="signup" htmlFor="text-area">About Me</label>
+                        <input className="input-field"
                         onChange={this.handleChange}
                         type="text-area"
                         id="bio"
@@ -79,9 +80,9 @@ class SignUp extends Component {
                         value={this.state.bio}
                         />
                     </div>
-                    <div className="form-group">
-                        <label className="form-group" htmlFor="img">Picture</label>
-                        <input className="form-group"
+                    <div className="signup">
+                        <label className="signup" htmlFor="img">Picture</label>
+                        <input className="input-field"
                         onChange={this.handleChange}
                         type="img"
                         id="pictureUrl"
@@ -89,7 +90,7 @@ class SignUp extends Component {
                         value={this.state.pictureUrl}
                         />
                     </div>
-                <button className="submit-btn" type="submit">Sign Up</button>
+                    <button className="submit-btn" type="submit">Sign Up</button>
                 </form>
             </div>
         )
