@@ -33,6 +33,7 @@ class Login extends Component {
                 <form onSubmit={ this.handleSubmit }>
                 <label htmlFor="username">Username</label>
                 <input 
+                    onChange={ this.handleChange }
                     type="username"
                     id="username"
                     name="username"

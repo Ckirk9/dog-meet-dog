@@ -1,4 +1,4 @@
-const url = process.env.REACT_APP_API_URL || 'localhost:5000/api/v1'
+const url = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/v1'
 
 export default class PetModel {
     static async create(data) {
