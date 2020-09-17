@@ -1,42 +1,47 @@
 import React from "react";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import Header from "./components/Header"
-import PetProfile from "./components/PetProfile"
-import PetCards from "./components/PetCards"
-import LikeButtons from "./LikeButtons"
-import Messages from "./components/Messages"
-import MessageShow from "./components/MessageShow"
+import Routes from './config/routes'
+import PetModel from './models/pet'
+import { useHistory } from "react-router-dom"
+
+import { useState } from 'react';
 import "./App.css";
 
-function App() {
+function App(props) {
+  const [currentPet, setCurrentPet] = useState(localStorage.getItem('uid'))
+  const [showBackButton, setShowBackButton] = useState(false)
+
+  const storePet = petId => {
+    setCurrentPet({ currentPet: petId })
+    localStorage.setItem('uid', petId)
+  }
+  const logout = event => {
+    event.preventDefault()
+    localStorage.removeItem('uid')
+    PetModel.signOut()
+    .then(data => {
+      setCurrentPet(null)
+      props.history.push('/')
+    })
+  }
+  const history = useHistory()
+  history.listen((location) => {
+    setShowBackButton(location.pathname === "/message")
+});
+  console.log('History: ', history);
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/message/:petName">
-              <Header backButton="/message" />
-              <MessageShow />
-          </Route>
-          <Route path="/message">
-              <Header backButton="/" />
-              <Messages />
-          </Route>
-          <Route path="/profile">
-              <Header />
-              <PetProfile />
-          </Route>
-          <Route exact path="/">
-              <Header/>
-              <PetCards />
-              <LikeButtons />
-          </Route>
-        </Switch>
-      </Router>
-      {/* register */}
-      {/* log in */}
-      {/* homepage */}
-      {/* matches */}
-      {/* profile */}
+      <div>
+      <Header
+      backButton={ showBackButton }
+      currentPet={ currentPet }
+      logout={ logout } 
+      />
+      </div>
+      <Routes
+      currentPet={ currentPet }
+      storePet={ storePet }
+      />
     </div>
   );
 }

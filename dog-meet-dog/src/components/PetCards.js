@@ -16,17 +16,18 @@ const PetCards= () => {
 
     return(
         <div className="pet-card">
+            {/* conditional here so that you don't match with yourself */}
             {pets.map(pet => (
                 // courtesy of react-tinder-card already includes swipe functionality
                 <TinderCard
                     className="swipe"
-                    key={pet.name}
+                    key={pet.username}
                     preventSwipe={['up', 'down']}
                 >
                     <div 
                         style={{ backgroundImage: `url(${pet.url})`}}
                         className="card">
-                        <h4>{pet.name}</h4>
+                        <h4>{pet.username}</h4>
                     </div>
                 </TinderCard>
             ))}

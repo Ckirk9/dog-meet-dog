@@ -14,7 +14,7 @@ class PetProfile extends Component {
     return (
         <div>
             <h3>Profile Page </h3>
-            <h3>{ this.state.pet.name }</h3>
+            <h3>{ this.state.pet.username }</h3>
             <p>{ this.state.pet.bio }</p>
             <img src="url" alt=""/>
         </div>

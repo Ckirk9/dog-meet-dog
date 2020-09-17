@@ -12,15 +12,13 @@ const Header = ({ backButton }) => {
     return (
         <div className="header">
             {backButton ? (
-                <IconButton onClick={() => history.replace(backButton)}>
-                <ArrowBackIcon className="icon" fontSize="large" />
+                <IconButton onClick={() => history.replace('/')}>
+                <ArrowBackIcon fontSize="large" className="icon"/>
                 </IconButton>
             ) : (
-                <Link to="/profile">
                 <IconButton>
                 <PetsIcon className="icon" fontSize="large"/>
                 </IconButton>
-                </Link>
             )}
             <Link to="/">
                 <div className="logo">

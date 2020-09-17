@@ -3,7 +3,7 @@ import PetModel from '../models/pet'
 
 class SignUp extends Component {
     state = {
-        userName: '',
+        username: '',
         password: '',
         password2: '', 
         bio: '',
@@ -21,11 +21,11 @@ class SignUp extends Component {
 
         //confirm created password matches
         if (this.state.password !== this.state.password2) return false
-        UserModel.create(this.state)
+        PetModel.create(this.state)
         .then(data => {
             // clear state in order to clear form fields
             this.setState({
-                userName: '',
+                username: '',
                 password: '',
                 password2: '',
                 bio: '',
@@ -42,13 +42,13 @@ class SignUp extends Component {
                 <h3>Sign Up</h3>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label className="form-group" htmlFor="userName">Username</label>
+                        <label className="form-group" htmlFor="username">Username</label>
                         <input className="form-group"
                         onChange={this.handleChange}
                         type="text"
-                        id="userName"
-                        name="userName"
-                        value={this.state.userName}
+                        id="username"
+                        name="username"
+                        value={this.state.username}
                         />
                     </div>
                     <div className="form-group">

@@ -1,7 +1,7 @@
 import React from "react"
 import CancelIcon from '@material-ui/icons/Cancel';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import "./LikeButtons.css"
+import "../LikeButtons.css"
 import { IconButton } from "@material-ui/core";
 
 function LikeButtons() {
