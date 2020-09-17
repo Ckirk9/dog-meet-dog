@@ -32,8 +32,10 @@ class SignUp extends Component {
                 bio: '',
                 pictureUrl: ''
             })
-            // direct to login
-            this.props.history.push('/login')
+            // store the pet in the session
+            this.props.storePet(data.pet)
+            // direct to home page
+            this.props.history.push('/')
         })
     }
 

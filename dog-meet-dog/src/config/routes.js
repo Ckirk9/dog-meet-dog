@@ -7,6 +7,7 @@ import PetCards from "../components/PetCards"
 import LikeButtons from "../components/LikeButtons"
 import Messages from "../components/Messages"
 import MessageShow from "../components/MessageShow"
+import PrivateRoute from "./PrivateRoute";
 
 // import Profile from '../containers/Profile'
  import Login from '../pages/Login'
@@ -16,21 +17,24 @@ import SignUp from '../pages/SignUp'
 export default (props) => {
     return (
     <Switch>
-        <Route path="/message/:petName">
+        <PrivateRoute path="/message/:petName">
             <MessageShow />
-        </Route>
-        <Route path="/message">
+        </PrivateRoute>
+        <PrivateRoute path="/message">
             <Messages />
-        </Route>
-        <Route exact path='/'> 
+        </PrivateRoute>
+        <PrivateRoute exact path='/'> 
             <PetCards />
             <LikeButtons />
-        </Route>
-        <Route path="/profile">
+        </PrivateRoute>
+        <PrivateRoute path="/profile">
             <PetProfile />
-        </Route>
-        <Route path='/SignUp' component={ SignUp } />
-
+        </PrivateRoute>
+        <Route path='/SignUp' render={ (routeProps) => {
+            return <SignUp
+            {...routeProps}
+            storePet={ props.storePet }/>}}
+        />
         <Route path='/login' render={ (routeProps) => {
             return <Login
             {...routeProps}

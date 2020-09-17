@@ -21,8 +21,8 @@ class Login extends Component {
                 // set up alert about invalid 
                 return false
             }
-            this.props.storeUser(data.pet)
-            this.props.history.push('/profile')
+            this.props.storePet(data.pet)
+            this.props.history.push('/')
         })
         .catch(err => console.log(err))
     }
