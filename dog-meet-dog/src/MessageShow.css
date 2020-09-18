@@ -38,7 +38,7 @@
     border-top: 1px solid lightsalmon;
 }
 
-.input-field {
+.message-show .input-field {
     flex: 1;
     padding: 10px;
     border: none;

@@ -27,6 +27,7 @@ function App(props) {
   history.listen((location) => {
     setShowBackButton(location.pathname === "/message")
 });
+  console.log('Current Pet: ', currentPet);
   return (
     <div className="App">
       { currentPet 
@@ -38,7 +39,7 @@ function App(props) {
         storePet={ storePet }/>
       { currentPet 
         ?
-        <div style={ { position: "absolute", bottom: 0, color: 'salmon'}} onClick={ logout }>Logout</div> 
+        <div style={ { position: "absolute", bottom: 0, color: 'whitesmoke', cursor: 'grab',}} onClick={ logout }>Logout</div> 
         : null}
     </div>
   );

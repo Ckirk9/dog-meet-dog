@@ -44,7 +44,7 @@ class SignUp extends Component {
         return (
             <div className="signup">
                 <h3 className="h3">Sign Up</h3>
-                <span>Already have an account?</span><Link to='/login'>Log In Here</Link>
+                <span>Already have an account?</span><Link className="login-link" to='/login'>Log In Here</Link>
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup">
                         <label className="signup" htmlFor="username">Username</label>

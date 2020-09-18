@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-evenly;
     background-color: whitesmoke;
+    cursor: grab;
     box-shadow: 0px 18px 53px 0px rgba(0, 0, 0, 0.3);
     /* border: 1px solid salmon; */
 }
@@ -12,11 +13,13 @@
 .swipe-right {
     padding: 3vw;
     color: mediumaquamarine;
+    cursor: grab;
 }
 
 .swipe-left {
     padding: 3vw;
     color: salmon;
+    cursor: grab;
 }
 
 
