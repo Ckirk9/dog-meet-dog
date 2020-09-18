@@ -1,33 +1,30 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-
-
 import PetProfile from "../components/PetProfile"
-import PetCards from "../components/PetCards"
-import LikeButtons from "../components/LikeButtons"
 import Messages from "../components/Messages"
 import MessageShow from "../components/MessageShow"
 import PrivateRoute from "./PrivateRoute";
 
 // import Profile from '../containers/Profile'
- import Login from '../pages/Login'
+import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
+import Home from '../pages/Home'
 
 
 export default (props) => {
+    const { currentPet } = props;
     return (
     <Switch>
-        <PrivateRoute path="/message/:petName">
+        <PrivateRoute currentPet={currentPet} path="/message/:petName">
             <MessageShow />
         </PrivateRoute>
-        <PrivateRoute path="/message">
+        <PrivateRoute currentPet={currentPet} path="/message">
             <Messages />
         </PrivateRoute>
-        <PrivateRoute exact path='/'> 
-            <PetCards />
-            <LikeButtons />
+        <PrivateRoute currentPet={currentPet} exact path='/'> 
+            <Home />
         </PrivateRoute>
-        <PrivateRoute path="/profile">
+        <PrivateRoute currentPet={currentPet} path="/profile">
             <PetProfile />
         </PrivateRoute>
         <Route path='/SignUp' render={ (routeProps) => {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PetModel from '../models/pet'
+import { Link } from 'react-router-dom';
 import "../SignUp.css"
 
 class SignUp extends Component {
@@ -42,7 +43,8 @@ class SignUp extends Component {
     render() {
         return (
             <div className="signup">
-                <h3>Sign Up</h3>
+                <h3 className="h3">Sign Up</h3>
+                <span>Already have an account?</span><Link to='/login'>Log In Here</Link>
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup">
                         <label className="signup" htmlFor="username">Username</label>

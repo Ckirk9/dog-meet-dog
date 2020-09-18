@@ -1,11 +1,13 @@
 import React from "react"
-import MatchCard from "../components/MatchCard"
+import PetCards from "../components/PetCards"
+import LikeButtons from "../components/LikeButtons"
 
 const Home = () => {
     return(
-        <div>
-            <MatchCard/>
-        </div>
+        <>
+            <PetCards />
+            <LikeButtons />
+        </>
     )
 }
 
