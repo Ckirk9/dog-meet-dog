@@ -30,8 +30,8 @@ const PetCards= () => {
                     <div 
                         style={{ backgroundImage: `url(${pet.pictureUrl})`}}
                         className="card">
-                        <h4>{pet.username}</h4>
-                        <h4>{pet.bio}</h4>
+                        <h4 className="name">{pet.username}</h4>
+                        <p>{pet.bio}</p>
                     </div>
                 </TinderCard>
             )) : null}
