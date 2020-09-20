@@ -57,4 +57,13 @@ export default class PetModel {
         })
         return await res.json
     }
+
+    static async like(pet, likedPet) {
+        const res = await fetch(`${url}/pets/likes/${pet}`, { 
+            method: "PUT", 
+            headers: { "Content-Type": "application/json" }, 
+            body: JSON.stringify({ likedPet: likedPet.username })
+        })
+        return await res.json()
+    }
 }

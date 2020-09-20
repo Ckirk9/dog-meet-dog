@@ -4,11 +4,22 @@ import PetModel from "../models/pet"
 import TinderCard from "react-tinder-card"
 import EditIcon from '@material-ui/icons/Edit';
 import IconButton from "@material-ui/core/IconButton";
+import Likes from './Likes';
 
 const MyProfile = () => {
     const [pet, setPet] = useState({});
     const [currentPet] = useState(localStorage.getItem('uid'))
+    const [pets, setPets] = useState([]);
 
+    // Nesting async function after receiving a propmt from the hooks warning to do so
+    useEffect(() => {
+        const fetchPets = async () => {
+            //when does useEffect get triggered?
+            const petsResponse = await PetModel.all(currentPet);
+            setPets(petsResponse.pets);
+        }
+        fetchPets();
+    }, [currentPet])
     // Nesting async function after receiving a propmt from the hooks warning to do so
     useEffect(() => {
         const fetchPet = async () => {
@@ -18,8 +29,13 @@ const MyProfile = () => {
         }
         fetchPet();
     }, [currentPet])
+
+    let filteredPets = [];
+    if (pets.length > 0 && pet.username) {
+        filteredPets = pets.filter(p => pet.petsLiked.includes(p.username));
+    }
     return(
-        <div>
+        <div className="profile">
         { pet ?<TinderCard
                     className="swipe"
                     key={pet.username}
@@ -38,6 +54,7 @@ const MyProfile = () => {
                 <EditIcon className="icon" fontSize="large"/>
                 </IconButton>
             </Link>
+            <Likes pets={filteredPets} size='small'/>
             </div>
     )
 }

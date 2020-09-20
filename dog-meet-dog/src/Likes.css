@@ -1,0 +1,26 @@
+.like-cards {
+    overflow-x: scroll;
+    position: fixed;
+    bottom: 3vh;
+    display: flex;
+    margin-top: 5vh;
+    height: 10vh;
+    width: 100vw;
+}
+
+.like-cards::-webkit-scrollbar {
+    display: none;
+}
+
+.like-card {
+    height: 10vh;
+    width: 10vh;
+    margin: 0 5px;
+}
+
+.like-img {
+    border-radius: 100%;
+    background-size: 10vh 10vh;
+    height: 10vh;
+    width: 10vh;
+}

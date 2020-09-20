@@ -22,9 +22,9 @@ function MessageShow() {
     return(
         <div className="message-show">
             <p className="title">You matched with name  </p>
-            {messages.map((message) => 
+            {messages.map((message, i) => 
                 message.name ? (
-                <div className="message">
+                <div  key={i} className="message">
                     <Avatar 
                         className="pet-image"
                         alt={ message.name }

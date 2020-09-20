@@ -8,6 +8,7 @@ import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
 import Home from '../pages/Home'
 import EditProfile from '../pages/EditProfile'
+import Show from '../components/Show';
 
 export default (props) => {
     const { currentPet } = props;
@@ -24,6 +25,9 @@ export default (props) => {
         </PrivateRoute>
         <PrivateRoute currentPet={currentPet} path="/myprofile">
             <MyProfile />
+        </PrivateRoute>
+        <PrivateRoute currentPet={currentPet} path="/profile/:username">
+            <Show />
         </PrivateRoute>
         <PrivateRoute currentPet={currentPet} path="/editprofile">
             <EditProfile />
