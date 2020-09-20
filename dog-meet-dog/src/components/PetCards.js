@@ -3,7 +3,7 @@ import TinderCard from "react-tinder-card"
 import PetModel from "../models/pet"
 import "../PetCards.css"
 
-const PetCards= () => {
+const PetCards = () => {
     const [pets, setPets] = useState([]);
     const [currentPet] = useState(localStorage.getItem('uid'))
 
