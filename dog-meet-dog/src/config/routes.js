@@ -4,12 +4,10 @@ import Messages from "../components/Messages"
 import MessageShow from "../components/MessageShow"
 import PrivateRoute from "./PrivateRoute";
 import MyProfile from "../components/MyProfile"
-
-// import Profile from '../containers/Profile'
 import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
 import Home from '../pages/Home'
-
+import EditProfile from '../pages/EditProfile'
 
 export default (props) => {
     const { currentPet } = props;
@@ -26,6 +24,9 @@ export default (props) => {
         </PrivateRoute>
         <PrivateRoute currentPet={currentPet} path="/myprofile">
             <MyProfile />
+        </PrivateRoute>
+        <PrivateRoute currentPet={currentPet} path="/editprofile">
+            <EditProfile />
         </PrivateRoute>
         <Route path='/SignUp' render={ (routeProps) => {
             return <SignUp

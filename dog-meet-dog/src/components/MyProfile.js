@@ -1,8 +1,9 @@
 import React, {  useState, useEffect } from "react"
+import { Link } from "react-router-dom";
 import PetModel from "../models/pet"
 import TinderCard from "react-tinder-card"
-import "../MyProfile.css"
-//import PetCards from "./PetCards"
+import EditIcon from '@material-ui/icons/Edit';
+import IconButton from "@material-ui/core/IconButton";
 
 const MyProfile = () => {
     const [pet, setPet] = useState({});
@@ -17,7 +18,6 @@ const MyProfile = () => {
         }
         fetchPet();
     }, [currentPet])
-    console.log('Pet from state: ', pet.pictureUrl);
     return(
         <div>
         { pet ?<TinderCard
@@ -33,7 +33,11 @@ const MyProfile = () => {
                     </div>
                 </TinderCard>
         : null }
-            
+            <Link to="/editprofile">
+                <IconButton>
+                <EditIcon className="icon" fontSize="large"/>
+                </IconButton>
+            </Link>
             </div>
     )
 }
