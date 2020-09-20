@@ -33,6 +33,7 @@ const MyProfile = () => {
                     </div>
                 </TinderCard>
         : null }
+            
             </div>
     )
 }
