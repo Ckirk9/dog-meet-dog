@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react"
 import PetCards from "../components/PetCards"
-import LikeButtons from "../components/LikeButtons"
 import PetModel from "../models/pet";
 
 const Home = () => {
@@ -19,7 +18,6 @@ const Home = () => {
     return(
         <>
             <PetCards pets={pets}/>
-            <LikeButtons />
         </>
     )
 }

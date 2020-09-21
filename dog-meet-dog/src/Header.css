@@ -4,7 +4,7 @@
     align-items: center;
     border-bottom: 1px solid salmon;
     background-color: whitesmoke;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .logo {
@@ -16,4 +16,5 @@
 
 .icon {
     padding: 20px;
+   
 }

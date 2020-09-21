@@ -5,6 +5,7 @@ import TinderCard from "react-tinder-card"
 import EditIcon from '@material-ui/icons/Edit';
 import IconButton from "@material-ui/core/IconButton";
 import Likes from './Likes';
+import '../MyProfile.css';
 
 const MyProfile = () => {
     const [pet, setPet] = useState({});
@@ -50,8 +51,8 @@ const MyProfile = () => {
                 </TinderCard>
         : null }
             <Link to="/editprofile">
-                <IconButton>
-                <EditIcon className="icon" fontSize="large"/>
+                <IconButton className="edit-icon">
+                <EditIcon fontSize="large"/>
                 </IconButton>
             </Link>
             <Likes pets={filteredPets} size='small'/>

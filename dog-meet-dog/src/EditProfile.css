@@ -1,0 +1,21 @@
+h2 {
+    display: flex;
+    color: salmon;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-family: Cambria;
+}
+
+.edit-field {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: whitesmoke;
+    color: darkgrey;
+    box-shadow: 0px 18px 53px 0px rgba(0, 0, 0, 0.3);
+    margin-left: 65px;
+    margin-bottom: 20px;
+
+}

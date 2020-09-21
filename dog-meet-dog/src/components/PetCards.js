@@ -8,7 +8,7 @@ const PetCards = ({pets, size}) => {
             {/* conditional here so that you don't match with yourself */}
             { pets ? pets.map(pet => (
                 <PetCard key={pet.username} pet={pet} size={size} />
-            )) : null}
+            )) : <p>No more pooches, check back later!</p>}
         </div>
     )
 }

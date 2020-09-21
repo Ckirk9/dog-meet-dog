@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PetModel from '../models/pet'
 import { useHistory } from 'react-router';
+import "../EditProfile.css"
 
 const EditProfile = () => { 
     const [pet, setPet] = useState({});
@@ -36,12 +37,14 @@ const EditProfile = () => {
                 <form onSubmit={handleSubmit}>
                 <div>
                     <textarea 
+                    className="edit-field"
                     name="bio" 
                     placeholder="Update about me here..."
                     onChange={handleChange}
                     value={pet.bio} >
                     </textarea>
                     <textarea 
+                    className="edit-field"
                     name="pictureUrl" 
                     placeholder="Add new image link here..."
                     onChange={handleChange}

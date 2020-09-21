@@ -1,0 +1,12 @@
+.edit-icon {
+    position: absolute !important;
+    right: 0;
+    color: whitesmoke !important;   
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    height: calc(50vh + 20px);
+}
