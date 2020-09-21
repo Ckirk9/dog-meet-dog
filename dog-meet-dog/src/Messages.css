@@ -1,9 +1,17 @@
+.message:nth-child(2) {
+    border-top: 2px solid black;
+}
+.message:last-child {
+    border-top: 2px solid black;
+}
+
 .message {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     height: 70px;
+    border-bottom: 2px solid black;
 }
 
 .message-image {
