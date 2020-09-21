@@ -1,4 +1,4 @@
-.message {
+/* .message {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,7 +15,7 @@ a {
 
 .message-details {
     /* prioritizes this container over the image icon and timestamp */
-    flex: 1;
+    /* flex: 1;
     color: darkgray;
 }
 
@@ -25,4 +25,4 @@ a {
 
 .timestamp {
     color: whitesmoke;
-}
+} */ 
