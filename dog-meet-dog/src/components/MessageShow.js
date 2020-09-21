@@ -9,16 +9,6 @@ function MessageShow() {
     const [currentPet] = useState(localStorage.getItem('uid'))
     const [pet, setPet] = useState({});
     const [pets, setPets] = useState([]);
-            // const [messages, setMessages] = useState([
-            //     { 
-            //         name: "Leo",
-            //         picture: "https://i.imgur.com/UuiThYG.jpg",
-            //         message: "HI! I'd like some treats please!"
-            //     },
-            //     { 
-            //         message: "Only if you're a very good boy!"
-            //     }
-            // ])
 
     // Nesting async function after receiving a propmt from the hooks warning to do so
     useEffect(() => {
@@ -40,29 +30,38 @@ function MessageShow() {
         fetchPets();
     }, [currentPet])
 
-    // const handleSend = e => {
-    //     e.preventDefault()
-    //     setMessages([...messages, { message: input }])
-    //     setInput("")
-    // }
+    const handleSend = (e, pet, match) => {
+        e.preventDefault()
+        PetModel.message(pet, match, input);
+        setInput("")
+    }
     const history = useHistory();
     const matchedPet = history.location.pathname.split('/')[2];
+    const matchedPetData = pets.find(p => p.username === matchedPet);
+    console.log('Pet: ', pet);
     return(
         <div className="message-show">
-            <p className="title">You matched with name  </p>
-            {pet.conversations[matchedPet].map((p, i) => 
-                p.username ? (
+            <div className="title">Your conversation with {matchedPet} 
+                <Avatar className="pet-image"
+                    alt={ pet ? pet.username : '' }
+                    src={ pet ? pet.pictureUrl : '' }
+                />
+                <Avatar className="pet-image"
+                    alt={ matchedPetData ? matchedPetData.username : '' }
+                    src={ matchedPetData ? matchedPetData.pictureUrl : '' }
+                />
+            </div>
+            { pet.username && pet.conversations[matchedPet] && matchedPetData ? pet.conversations[matchedPet].map((msg, i) => (
                 <div  key={i} className="message">
-                    <Avatar 
-                        className="pet-image"
-                        alt={ p.username.name }
-                        src={ p.pictureUrl }
-                        />
-                    {/* <p className="message-text">{ message.message }</p> */}
+                <Avatar className="pet-image"
+                    alt={ msg.sender }
+                    src={ matchedPetData.username === msg.sender ? matchedPetData.pictureUrl : pet.pictureUrl }
+                />
+                    <p className="message-text">{ msg.message }</p>
                 </div>
-                ) : null
-            )}
-            <form className="input" type="text">
+                )
+            ) : null}
+            <form onSubmit={(e) => handleSend(e, currentPet, matchedPetData)} className="input" type="text">
                 <input 
                 value={ input }
                 onChange={ (e) => setInput(e.target.value)}
@@ -72,7 +71,7 @@ function MessageShow() {
                 <button 
                 className="input-button"
                 type="submit"
-                onClick={x => x}>Send</button>
+                >Send</button>
             </form>
         </div>
     )
